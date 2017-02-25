@@ -13,26 +13,25 @@ module.exports ={
 	},
 //you have to use the teacher model to make a new database entry 
 	insertTeachers : function (req, res) {
-		console.log('yeaaaaa')
-		var Newteachers = new teacher ({
-				teacherName : req.body.teacherName,
-				teacherAge : req.body.teacherAge,
-				teacherPhone :req.body.teacherPhone,
-				teacherAddress:req.body.teacherAddress,
-				teacherLevelteach: req.body.teacherLevelteach,
-		});
-		Newteachers.save(function (err,newteacher) {
-			console.log("newteacher")
-			if (err) {
-				res.status(500).res.send(err);
-				console.log(err)
-			}
-			else{
-				res.json(newteacher);
-				console.log('insert teacher succefuly')
-			}
-			
-		})
+		for (var i = 0; i < req.body.length; i++) {
+			var Newteachers = new teacher ({
+					teacherName : req.body[i].teacherName,
+					teacherAge : req.body[i].teacherAge,
+					teacherPhone :req.body[i].teacherPhone,
+					teacherAddress:req.body[i].teacherAddress,
+					teacherLevelteach: req.body[i].teacherLevelteach,
+			});
+			Newteachers.save(function (err,newteacher) {
+				console.log("newteacher")
+				if (err) {
+					res.status(500).res.send(err);
+					console.log(err)
+				}
+			})
+
+		}
+		res.json(req.body);
+		console.log('insert teachers succefuly')
 	},
 //you need to use params.id to find a teacher from your database
 	getTeacherById: function (req,res) {
