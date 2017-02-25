@@ -1,0 +1,27 @@
+{
+  "name": "apisprint",
+  "version": "1.0.0",
+  "description": "group b sprint",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/al6obasi/APIsprint.git"
+  },
+  "author": "mohammad_masa'id",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/al6obasi/APIsprint/issues"
+  },
+  "homepage": "https://github.com/al6obasi/APIsprint#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "mongodb": "^2.2.24",
+    "mongoose": "^4.8.4",
+    "morgan": "^1.8.1",
+    "request": "^2.79.0"
+  }
+}
